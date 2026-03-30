@@ -16,6 +16,19 @@ use App\Http\Controllers\DashboardController;
 |--------------------------------------------------------------------------
 */
 
+Route::get('/debug-session', function () {
+    return response()->json([
+        'session_driver' => config('session.driver'),
+        'session_domain' => config('session.domain'),
+        'secure_cookie' => config('session.secure'),
+        'app_url' => config('app.url'),
+        'app_env' => config('app.env'),
+        'storage_writable' => is_writable(storage_path('framework/sessions')),
+        'session_id' => session()->getId(),
+        'session_data' => session()->all(),
+    ]);
+})->middleware('web');
+
 Route::get('/', [ViewController::class, 'index'])->name('pages.index');
 
 Route::get('el-torrejon', [ViewController::class, 'elTorrejon'])->name('pages.eltorrejon');

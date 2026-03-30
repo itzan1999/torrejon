@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Log;
+
 class AuthController
 {
   /*
@@ -51,7 +53,20 @@ class AuthController
         ->withInput();
     }
 
+    // Antes del login
+    Log::info('Antes del login', [
+        'session_id' => session()->getId(),
+        'session_driver' => config('session.driver'),
+    ]);
+
     Auth::guard('web')->login($cuenta);
+
+    // Después del login
+    Log::info('Después del login', [
+        'session_id' => session()->getId(),
+        'autenticado' => Auth::guard('web')->check(),
+        'usuario' => Auth::guard('web')->user()?->usuario->username,
+    ]);
     $request->session()->regenerate();
 
     $esAdmin = $cuenta->usuario->roles()->where('nombre_rol', 'admin')->exists();
