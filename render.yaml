@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: lecheeltorrejon
+    runtime: php
+    buildCommand: "./build.sh"
+    startCommand: "php artisan serve --h"
