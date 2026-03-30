@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\AuthController as ApiAuth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 
 // --RUTAS DE LAS VISTAS--
 
@@ -16,14 +17,10 @@ use App\Http\Controllers\DashboardController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/debug-session', function () {
+Route::get('/debug-auth', function () {
     return response()->json([
-        'session_driver' => config('session.driver'),
-        'session_domain' => config('session.domain'),
-        'secure_cookie' => config('session.secure'),
-        'app_url' => config('app.url'),
-        'app_env' => config('app.env'),
-        'storage_writable' => is_writable(storage_path('framework/sessions')),
+        'autenticado' => Auth::guard('web')->check(),
+        'usuario' => Auth::guard('web')->user()?->email ?? 'ninguno',
         'session_id' => session()->getId(),
         'session_data' => session()->all(),
     ]);
