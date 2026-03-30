@@ -2,7 +2,6 @@ FROM trafex/php-nginx:latest
 
 USER root
 
-# Instalar extensiones necesarias (php85 porque la imagen usa PHP 8.5)
 RUN apk add --no-cache \
     php85-pdo \
     php85-pdo_mysql \
@@ -17,8 +16,10 @@ RUN apk add --no-cache \
     php85-session \
     php85-openssl
 
-# Copiar composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copiar configuración de NGINX
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 USER nobody
 
