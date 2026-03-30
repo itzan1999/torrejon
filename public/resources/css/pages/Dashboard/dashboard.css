@@ -1,0 +1,129 @@
+.sidebar-user-panel {
+    width: 320px;
+    background-color: #eeeeee; /* Gris exacto de la imagen */
+    padding: 30px 25px;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif; /* O la que uses en el proyecto */
+    color: #333;
+}
+
+/* Títulos de sección */
+.group-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.group-title i {
+    font-size: 1.4rem; /* Iconos un poco más grandes como en la foto */
+}
+
+/* Contenedor de enlaces */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Separación vertical entre enlaces */
+    padding-left: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Línea divisora */
+.sidebar-line {
+    border: 0;
+    border-top: 1.5px solid #666; /* Línea oscura y marcada */
+    margin: 25px 0;
+    opacity: 1;
+}
+
+/* Footer: Cerrar sesión y Borrar cuenta */
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.footer-link i {
+    font-size: 1.5rem;
+}
+
+.footer-link:hover {
+    color: #000;
+}
+/*CSS ADMIN DASHBOARD*/
+/* Contenedor principal con nombre único */
+.sidebar-admin-panel {
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+/* Fila del enlace */
+.admin-sidebar-item {
+    display: flex;
+    align-items: center; 
+    gap: 15px;           
+    text-decoration: none;
+    color: #444;
+    margin-bottom: 12px;
+    transition: 0.2s;
+}
+
+/* Solo los iconos (Equivalente al group-title anterior pero con nombre único) */
+.admin-group-icon {
+    font-size: 1.5rem !important; /* Tamaño grande de h6 */
+    font-weight: 700 !important;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;         
+    margin: 0;           
+}
+
+/* Texto del enlace */
+.admin-item-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Línea divisoria única para Admin */
+.admin-sidebar-line {
+    border: 0;
+    border-top: 1.5px solid #ccc;
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+/* Efectos */
+.admin-sidebar-item:hover .admin-item-text {
+    text-decoration: underline;
+    color: #000;
+}

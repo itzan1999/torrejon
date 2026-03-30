@@ -1,0 +1,15 @@
+/* Estilos base para móviles (default) */
+p {
+    font-size: 15px;
+    margin-bottom: 16px;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    font-size: 45px; /* más pequeño para móviles */
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: "AbrilTitling-Bold";
+    color: black;
+}

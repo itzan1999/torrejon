@@ -1,0 +1,270 @@
+/* ===============================
+   RESET SUAVE
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #d5d1ca, #c2e0ff);
+    color: #111;
+    min-height: 100vh;
+}
+
+/* ===============================
+   CONTENEDOR GENERAL AUTH
+================================= */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Card principal */
+.auth-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    padding: 50px 45px;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ===============================
+   LOGO
+================================= */
+.auth-logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auth-logo img {
+    max-height: 70px;
+    object-fit: contain;
+}
+
+/* ===============================
+   TÍTULOS
+================================= */
+.auth-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* ===============================
+   FORMULARIOS
+================================= */
+form label {
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+    background: #fff;
+    border-radius: 6px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox */
+form .form-check-input {
+    margin-right: 8px;
+}
+
+/* ===============================
+   BOTONES
+================================= */
+.auth-btn {
+    width: 100%;
+    padding: 13px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+}
+
+.auth-btn:hover {
+    background: #333;
+}
+
+/* ===============================
+   MENSAJES
+================================= */
+.auth-success {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.auth-success-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.auth-text-muted {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===============================
+   ERRORES
+================================= */
+.error {
+    font-size: 13px;
+    color: red;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.success {
+    color: green;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ============================================
+   ALINEAR CHECKBOX EXACTAMENTE CON LOS INPUTS
+=============================================== */
+
+/* Neutralizar completamente el comportamiento de Bootstrap */
+.form-check {
+    padding-left: 0 !important;
+    position: relative !important;
+}
+
+/* Hacer que el checkbox se comporte como un input normal */
+.form-check-input {
+    margin-left: 11px !important; /* Ajuste fino para alinearlo con el input */
+    margin-top: 2px !important;
+}
+
+/* Texto alineado a la derecha del checkbox */
+.form-check-label {
+    margin-left: 6px !important;
+}
+
+/* Error justo debajo del checkbox */
+.form-check .error {
+    margin-left: 33px !important; /* 28px = ancho del checkbox + separación */
+    margin-top: 6px !important;
+}
+
+/* ===============================
+   ICONOS DENTRO DE INPUTS
+================================= */
+.input-icon {
+    position: relative;
+}
+
+.input-icon input {
+    padding-left: 35px;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+}
+
+/* ===============================
+   ICONOS DENTRO DE CONTRASEÑA
+================================= */
+
+.position-relative .toggle-password {
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-password {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password svg {
+    transition: opacity 0.15s ease;
+}
+
+.toggle-password:active svg {
+    opacity: 0.6;
+}
+
+.toggle-password:hover svg path {
+    fill: #444;
+}
+
+input[type="password"] {
+    padding-right: 40px;
+}
+
+.toggle-password.visible svg path {
+    fill: #007bff; /* azul elegante */
+}
+
+/* Quitar el botón por defecto de Bootstrap para mostrar contraseña */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none !important;
+}
+
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-reveal-button {
+    display: none !important;
+}
+
+input[type="password"] {
+    padding-right: 40px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 35px 25px;
+    }
+}

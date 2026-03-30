@@ -1,0 +1,45 @@
+/* Contenedor que ocupa toda la pantalla */
+#modalConfirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+    z-index: 10000; /* Por encima de todo */
+    
+    /* MAGIA DEL CENTRADO */
+    display: none; /* Se cambia a 'flex' por JS */
+    align-items: center;    /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    
+    backdrop-filter: blur(4px); /* Difumina el fondo de la web */
+}
+
+/* La caja blanca del mensaje */
+.modal-contenido {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    animation: zoomIn 0.3s ease; /* Animación de entrada */
+}
+
+/* Animación opcional para que "brote" del centro */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Estilo del resumen dentro del modal */
+#resumenPedidoModal {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    max-height: 200px;
+    overflow-y: auto; /* Por si el pedido es muy largo */
+}

@@ -1,0 +1,129 @@
+/* H1 común para todos*/
+h1 {
+    color: black;
+    font-weight: bold;
+    font-family: "AbrilTitling-Bold";
+}
+
+/* =====================================
+   INPUTS DE CONTRASEÑA
+===================================== */
+
+/* Contenedor del input */
+.position-relative {
+    position: relative;
+}
+
+/* Espacio para el icono dentro del input */
+.position-relative input[type="password"],
+.position-relative input[type="text"] {
+    padding-right: 45px;
+}
+
+/* =====================================
+   BOTÓN DEL OJO
+===================================== */
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+/* =====================================
+   ICONO SVG
+===================================== */
+
+.eye-icon {
+    width: 22px;
+    height: 22px;
+
+    color: #000;
+
+    opacity: 0.8;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.15s ease,
+        color 0.2s ease;
+}
+
+/* Hover */
+.toggle-password:hover .eye-icon {
+    opacity: 1;
+    color: #444;
+}
+
+/* Click */
+.toggle-password:active .eye-icon {
+    transform: scale(0.9);
+}
+
+/* Cuando la contraseña está visible */
+.toggle-password.visible .eye-icon {
+    color: #007bff;
+    opacity: 1;
+}
+
+/* =====================================
+   MENSAJES DE ERROR
+===================================== */
+
+.error {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #dc3545;
+}
+
+.error ul {
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+
+.error li {
+    line-height: 1.4;
+}
+
+/* oculto */
+.hidden {
+    display: none;
+}
+
+/* =====================================
+   MENSAJE GLOBAL (SUCCESS / ERROR)
+===================================== */
+
+#msg {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#msg.success {
+    color: #198754;
+}
+
+#msg.error {
+    color: #dc3545;
+}
+
+/* =====================================
+   OCULTAR BOTONES NATIVOS DEL NAVEGADOR
+===================================== */
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-reveal-button {
+    display: none;
+}

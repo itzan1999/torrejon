@@ -1,0 +1,391 @@
+/* ===========================
+   COSAS COMUNES DEL HTML, BODY Y MAIN
+=========================== */
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* background: linear-gradient(135deg, #d5d1ca, #c2e0ff); */
+}
+
+main {
+    flex: 1;
+}
+
+/* CSS general para los h1 y p */
+h1 {
+    font-family: "AbrilTitling-Bold", serif;
+    color: black;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    color: black;
+}
+
+/* ===========================
+   HEADER Y COSAS RELACIONAS CON ÉL
+=========================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: white;
+}
+
+/* Apartado social del header*/
+.socialHeader1,
+.socialHeader2 {
+    display: flex;
+    align-items: center;
+    border-top: none;
+    border-bottom: none;
+    padding: 10px 20px; /* Espacio interno respecto a los bordes */
+}
+
+.socialHeader1 {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    gap: 10px;
+}
+
+.socialHeader2 {
+    border-right: 1px solid black; /* Borde izquierdo para separar del teléfono/email */
+    gap: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.social-btnHeader {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.social-btnHeader svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Para la linea de abajo de los enlaces del header*/
+.nav-link-custom {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-family: "AbrilTitlingSb";
+    font-size: 13px;
+    letter-spacing: 3px;
+    position: relative; /* Necesario para posicionar la línea */
+    padding-bottom: 5px;
+}
+
+/* Creamos la línea con un pseudo-elemento */
+.nav-link-custom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35%; /* Aquí defines que sea un cuarto */
+    height: 1px; /* Grosor de la línea */
+    background-color: gray;
+    transform: scaleX(0); /* Escondida por defecto */
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+/* Se muestra cuando está ACTIVA o cuando haces HOVER */
+.nav-link-custom.active::after {
+    transform: scaleX(1);
+}
+.nav-link-custom:hover {
+    filter: brightness(80%);
+    transform: scaleX(1);
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+/* INPUT DE BUSCAR */
+.search-input {
+    width: 120px; /* tamaño base para móvil pequeño */
+    color: black;
+    font-family: "AbrilTitlingSb";
+    font-size: 13px;
+    background-color: white;
+    padding: 5px 10px;
+    transition: width 0.1s ease;
+}
+
+/* ===========================
+   BADGE DEL CARRITO
+=========================== */
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #dc3545;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+
+    line-height: 1;
+}
+
+/* Botón usuario y carrito */
+.user-btn,
+.cart-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Hover y click */
+.user-btn:hover,
+.user-btn:focus,
+.cart-btn:hover,
+.cart-btn:focus {
+    background-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Móviles grandes y tabletas pequeñas */
+@media (min-width: 576px) {
+    .search-input {
+        width: 150px;
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+/* Tablet mediana / desktop pequeño */
+@media (min-width: 768px) {
+    .search-input {
+        width: 180px;
+        font-size: 13px;
+    }
+}
+
+/* Desktop mediano */
+@media (min-width: 992px) {
+    .search-input {
+        width: 100px;
+        font-size: 14px;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+    .search-input {
+        width: 200px;
+        font-size: 14px;
+    }
+}
+
+/* FIN INPUT DE BUSCAR */
+
+/* Query para el logo del centro */
+@media (min-width: 992px) {
+    .logo-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none; /* Evita que el contenedor bloquee clics */
+    }
+
+    .logo-container a {
+        pointer-events: auto; /* Permite hacer clic en el logo */
+    }
+}
+
+/* ===========================
+   FOOTER Y COSAS RELACIONAS CON ÉL
+=========================== */
+.footer {
+    background-color: #d5d1ca;
+    border-top: 1px solid black;
+}
+
+.footer nav > a {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.legal {
+    border-top: 1px solid gray;
+}
+
+.copy {
+    font-size: 12px;
+    order: 2;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.nav-link-custom {
+    letter-spacing: 1px;
+}
+
+/* Para el modal de cookies */
+.modal-content {
+    max-height: 100vh; /* Máximo 100% de la altura de la pantalla */
+}
+
+
+
+/* ==========================================
+   SIDEBAR CARRITO (Optimizado y Responsivo)
+   ========================================== */
+
+/* Bloqueo de scroll cuando la cesta está abierta */
+body.no-scroll {
+    overflow: hidden;
+}
+
+#sidebarCesta, 
+.sidebar-cesta {
+    position: fixed;
+    top: 0;
+    right: -450px; /* Escondido por defecto */
+    width: 400px;
+    max-width: 100%; /* Ajuste automático en móviles */
+    height: 100vh;
+    background: #ffffff;
+    z-index: 3000;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+/* Estado activo para mostrarlo */
+#sidebarCesta.active, 
+.sidebar-cesta.active {
+    right: 0 !important;
+}
+
+.sidebar-header {
+    background: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.sidebar-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #ffffff;
+    /* Scrollbar minimalista para Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #cccccc transparent;
+}
+
+/* Scrollbar para Chrome/Safari/Edge */
+.sidebar-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-body::-webkit-scrollbar-thumb {
+    background: #dddddd;
+}
+
+.sidebar-footer {
+    background: #f8f9fa; /* Un tono sutilmente distinto para separar el total */
+    border-top: 1px solid #dee2e6;
+    padding: 20px;
+}
+
+/* Overlay (Fondo oscuro) */
+#overlayCesta, 
+.overlay-cesta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px); /* Toque moderno de desenfoque */
+}
+
+#overlayCesta.active, 
+.overlay-cesta.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Estilos de Componentes Internos --- */
+
+.btn-verCesta {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 12px;
+    transition: background 0.2s ease;
+}
+
+.btn-verCesta:hover {
+    background-color: #333333 !important;
+}
+
+.img-sidebar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #eeeeee;
+    padding: 2px;
+    background: #fff;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* Ajustes de precio */
+.precio-actual-cesta {
+    color: #d10000;
+    font-weight: 700;
+}
+
+.precio-viejo-cesta {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* FIN SIDEBAR CARRITO */

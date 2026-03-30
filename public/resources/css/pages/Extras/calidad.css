@@ -1,0 +1,102 @@
+/* --- Estructura y Fondos --- */
+.seccion-principal { 
+    margin-bottom: 0;
+}
+
+.fondo-gris { 
+    background-color: #e4e6e5; 
+}
+
+.fondo-blanco {
+    background-color: #ffffff !important;
+}
+
+.fondo { 
+    background-image: url("../../images/milk.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- Bordes y Separadores --- */
+.linea-separadora-productos { 
+    border-bottom: 1px solid #000000 !important; 
+}
+
+/* --- Tipografía y Formato de Texto --- */
+.text-justify { 
+    text-align: justify; 
+}
+
+.texto-contenido-formateado p { 
+    margin-bottom: 0.85rem !important;
+    line-height: 2;
+}
+
+strong { 
+    color: #000000;
+    font-weight: 700; 
+}
+
+.titulo-estilo-serif { 
+    font-family: serif; 
+    color: #000; 
+    line-height: 1.1; 
+}
+
+.frase-innovacion-enfasis { 
+    font-family: serif; 
+    font-size: 3rem; 
+    font-weight: 800; 
+    color: #000; 
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.subtitulo-tradicion {
+    letter-spacing: 2px;
+}
+
+/* --- Ajustes de Maquetación y Espacios --- */
+.imagen-seccion-ajustada { 
+    object-fit: cover; 
+    width: 100%;
+    min-height: 700px; 
+    display: block;
+}
+
+.fila-ajuste-dual { 
+    padding-top: 100px; 
+    padding-bottom: 100px; 
+}
+
+.bloque-frase-destacada { 
+    padding: 120px 0; 
+}
+
+.limite-ancho-texto { 
+    max-width: 500px; 
+}
+
+.linea-decorativa-corta { 
+    width: 100px; 
+    height: 1px; 
+    background-color: #000; 
+    margin: 60px auto 0; 
+    opacity: 0.4; 
+}
+
+.icono-flecha-guia {
+    height: 92px;
+    width: auto;
+    opacity: 0.4;
+}
+
+#logo {
+    width: 140px; 
+    opacity: 0.8;
+}
+
+#lista {
+    list-style-type: disc; 
+    line-height: 2;
+}

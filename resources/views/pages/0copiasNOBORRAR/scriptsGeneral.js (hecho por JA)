@@ -1,0 +1,71 @@
+// Script que compartirían todas las ventanas que se cargan cuando el DOM se ha cargado, como el contador del carrito, el menú dropdown, etc
+
+// Script para cerrar el menú dropdown movil al hacer click fuera de él
+document.addEventListener("click", function (event) {
+    const menu = document.getElementById("menuPrincipal");
+    const button = document.querySelector(".navbar-toggler");
+
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickOnButton = button.contains(event.target);
+
+    if (
+        menu.classList.contains("show") &&
+        !isClickInsideMenu &&
+        !isClickOnButton
+    ) {
+        const bsCollapse = bootstrap.Collapse.getInstance(menu);
+        if (bsCollapse) {
+            bsCollapse.hide();
+        }
+    }
+});
+
+// Cuando se carge el DOM, se ejecutará esta función para cargar el contador del carrito
+document.addEventListener("DOMContentLoaded", () => {
+    // Solo llamamos a la función al cargar la página
+    cargarContadorCarrito();
+
+    // Cuando se añado un producto al carrito, se dispara un evento personalizado para actualizar el contador
+    document.addEventListener(
+        "productoAñadidoAlCarrito",
+        cargarContadorCarrito,
+    );
+
+    // Función asincrona para cargar el contador del carrito desde la API y actualizar el DOM
+    async function cargarContadorCarrito() {
+        try {
+            const response = await fetch("/api/carrito", {
+                method: "GET",
+                credentials: "include", // para enviar cookies de sesión
+                headers: {
+                    "X-CSRF-TOKEN": obtenerTokenCSRF(), // para proteger contra CSRF
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (!response.ok) {
+                console.warn("No se pudo obtener el carrito:", response.status);
+                return;
+            }
+
+            const data = await response.json();
+            const contador = document.getElementById("contadorCarrito");
+            let totalProductos = 0;
+
+            if (data.productosCarrito) {
+                totalProductos = data.productosCarrito.reduce(
+                    (acc, p) => acc + (p.cantidad || 0),
+                    0,
+                );
+            }
+
+            if (contador) {
+                contador.textContent = totalProductos;
+                // contador.style.display = totalProductos > 0 ? "flex" : "none";
+            }
+        } catch (error) {
+            console.error("Error cargando carrito:", error);
+        }
+    }
+});

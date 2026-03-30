@@ -1,0 +1,149 @@
+/* --- TARJETAS --- */
+.tarjeta-blanca-productos {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.panel-resumen-compra {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+/* --- BOTONES NEGROS PRINCIPALES --- */
+.btn-negro-completo {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    width: 100% !important;
+    display: block !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.btn-realizar-pedido { padding: 16px 20px; }
+.btn-abrir-soporte { padding: 12px 0; font-size: 0.9rem; }
+
+.btn-negro-completo:hover { opacity: 0.85; }
+.btn-negro-completo:active { transform: scale(0.96); }
+
+/* --- BOTONES ACCIÓN (SEGUIR / VACIAR) --- */
+.btn-accion-cesta {
+    transition: all 0.2s ease-in-out !important;
+    font-weight: 700 !important;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SEGUIR COMPRANDO: De transparente a Negro sólido */
+.btn-seguir-comprando {
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 8px 20px;
+}
+
+.btn-seguir-comprando:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* VACIAR CARRITO: Borde negro, fondo light, cambio sutil de tono */
+.btn-vaciar-carrito {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #000000 !important;
+    border-radius: 4px;
+    padding: 8px 15px;
+}
+
+.btn-vaciar-carrito:hover {
+    background-color: #f23319 !important; /* Tonalidad más oscura */
+    color: #333 !important;
+}
+
+/* Efecto común al presionar para ambos */
+.btn-accion-cesta:active {
+    opacity: 0.85;
+    transform: scale(0.95) !important;
+}
+
+/* --- SELECTOR DE CANTIDAD --- */
+.input-group .btn-light {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    font-weight: bold;
+}
+
+/*SUSCRIPCION*/
+/* --- SWITCH ESTILO MINIMALISTA --- */
+
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    
+    /* Fondo Neutro (Desactivado) */
+    background-color: #e0e0e0;
+}
+
+.switch-botton {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- ESTADOS --- */
+
+/* Fondo cuando está activo (Verde minimalista o Negro según prefieras) */
+.switch-input:checked + .switch-label {
+    background-color: #2ecc71; /* Un verde más plano y moderno */
+}
+
+/* Movimiento del botón */
+.switch-input:checked + .switch-label .switch-botton {
+    transform: translateX(24px);
+}
+
+/* Efecto hover suave */
+.switch-label:hover {
+    background-color: #d5d5d5;
+}
+
+.switch-input:checked + .switch-label:hover {
+    background-color: #27ae60;
+}
+
+/* Estilo del texto */
+.spacing-1 {
+    color: #444;
+    font-size: 0.8rem;
+}
+

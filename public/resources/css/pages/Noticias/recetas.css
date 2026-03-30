@@ -1,0 +1,223 @@
+/* ================================
+   TIPOGRAFÍA GENERAL
+================================ */
+p,
+ol,
+li {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 16px !important;
+    color: black;
+}
+
+/* Título principal */
+h1 {
+    font-family: "AbrilTitling-Bold" !important;
+    font-size: 44px !important;
+    color: black;
+}
+
+h5 {
+    font-family: "AbrilTitling-Bold" !important;
+    color: black !important;
+    font-size: 20px !important;
+}
+
+/* Fecha */
+.receta-fecha {
+    font-family: "AbrilTitling-Bold" !important;
+    font-size: 12px !important;
+    color: black !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+}
+
+/* ================================
+   IMAGEN FIJA SUPERIOR
+================================ */
+.receta-fija-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: none;
+}
+
+/* ================================
+   CONTENEDOR GENERAL
+================================ */
+.receta-container {
+    max-width: 1200px;
+}
+
+/* ================================
+   COLUMNA IZQUIERDA
+================================ */
+.receta-titulo {
+    font-family: "AbrilTitling-Bold" !important;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ================================
+   REDES SOCIALES
+================================ */
+.social-btnChocolateConsumo {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background-color: #fff;
+}
+
+.social-btnChocolateConsumo svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ================================
+   IMAGEN DE LA RECETA
+================================ */
+.receta-imagen img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ================================
+   COLUMNA DERECHA (TEXTO)
+================================ */
+.receta-texto p,
+.receta-texto ul li,
+.receta-texto ol li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.receta-texto ul,
+.receta-texto ol {
+    margin-left: 20px;
+}
+
+/* ================================
+   NAVEGACIÓN INFERIOR
+================================ */
+.receta-navegacion-full {
+    width: 100%;
+    border-top: 1px solid #000;
+}
+
+.receta-volver {
+    font-size: 23px;
+    font-family: "AbrilTilting";
+    text-decoration: none;
+    color: #000;
+}
+
+/* ================================
+   FLECHAS DE NAVEGACIÓN (RESPONSIVE)
+================================ */
+
+/* Tamaño base (móvil) */
+.flecha-receta {
+    width: 26px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Tablet */
+@media (min-width: 576px) {
+    .flecha-receta {
+        width: 32px;
+    }
+}
+
+/* Desktop pequeño */
+@media (min-width: 768px) {
+    .flecha-receta {
+        width: 36px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .flecha-receta {
+        width: 40px;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+    .flecha-receta {
+        width: 46px;
+    }
+}
+
+.flecha-receta:hover {
+    transform: scale(1.1);
+}
+
+/* ================================
+   SEPARACIÓN ENTRE FLECHAS (RESPONSIVE)
+================================ */
+
+/* Móvil */
+.receta-flechas {
+    padding-top: 1px;
+    gap: 60px;
+}
+
+/* Tablet */
+@media (min-width: 576px) {
+    .receta-flechas {
+        gap: 120px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .receta-flechas {
+        gap: 180px;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+    .receta-flechas {
+        gap: 260px;
+    }
+}
+
+.receta-flechas svg {
+    display: block;
+}
+
+/* ================================
+   RESPONSIVE GENERAL
+================================ */
+@media (max-width: 768px) {
+    .receta-container {
+        padding: 20px;
+    }
+
+    .receta-titulo {
+        font-size: 2rem;
+    }
+
+    .receta-texto p,
+    .receta-texto ul li,
+    .receta-texto ol li {
+        font-size: 16px;
+    }
+
+    .border-end {
+        border-right: none !important;
+    }
+}

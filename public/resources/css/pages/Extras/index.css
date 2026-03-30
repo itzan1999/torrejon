@@ -1,0 +1,151 @@
+/* --- CONFIGURACIÓN BASE --- */
+.text-serif { font-family: 'Playfair Display', serif; }
+.text-justify { text-align: justify; }
+.fondo-gris { background-color: #e4e6e5; }
+.fondo-blanco { background-color: #ffffff; }
+
+/* --- HERO CARRUSEL --- */
+.carrusel-hero { height: 85vh; min-height: 700px; position: relative; overflow: hidden; background: #fff; }
+.slide-item { position: absolute; inset: 0; display: flex; opacity: 0; transition: opacity 1.2s ease; z-index: 1; }
+.slide-item.active { opacity: 1; z-index: 2; }
+.info-lado { width: 50%; display: flex; align-items: center; padding: 0 8%; background: #fff; }
+.imagen-lado { width: 50%; background-size: cover; background-position: center; }
+.limite-ancho-hero { max-width: 550px; }
+.titulo-hero-serif { font-family: serif; font-size: 4rem; line-height: 1.1; margin-bottom: 2rem; font-weight: 700;}
+.texto-hero-muted { font-size: 1.2rem; color: #000000; line-height: 1.6; margin-bottom: 3rem; }
+
+/* PUNTOS NAVEGACIÓN (COMUNES PARA HERO Y FINAL) */
+.nav-lateral-puntos { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); z-index: 10; display: flex; flex-direction: column; gap: 20px; }
+.punto-wrapper { width: 20px; height: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative; }
+.punto-core { width: 6px; height: 6px; background: #000; border-radius: 50%; opacity: 0; transition: 0.3s; }
+.punto-outer { position: absolute; inset: 0; border: 1px solid #000; border-radius: 50%; }
+.punto-wrapper.active .punto-core {  }
+
+/* --- SECCIÓN MANIFIESTO (DARK) --- */
+.seccion-manifiesto-dark { 
+    background-color: #000; 
+    min-height: 60vh; 
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+}
+.line-separator-white { width: 100px; height: 1px; background: #fff; border: none; opacity: 0.3; }
+
+/* --- ESTRUCTURA DUAL (TIPO CALIDAD) --- */
+.fila-ajuste-dual { padding: 100px 0; }
+.imagen-seccion-ajustada { min-height: 600px; object-fit: cover; }
+.limite-ancho-texto { max-width: 500px; }
+.titulo-estilo-serif { font-family: serif; font-size: 3rem; margin-bottom: 2rem; }
+.texto-contenido-formateado p { line-height: 1.8; color: #444; margin-bottom: 1.5rem; }
+.icono-flecha-guia { width: 120px; opacity: 0.5; }
+
+/* --- CARRUSEL NOTICIAS: ALINEACIÓN TOTAL --- */
+.carrusel-wrapper { width: 100%; overflow: hidden; }
+.carrusel-track { display: flex; transition: none; }
+.carrusel-track.con-animacion { transition: transform 0.5s ease-in-out; }
+
+.noticia-item {
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+    display: flex;
+}
+
+.card-noticia-completa {
+    text-decoration: none !important;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; 
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.img-container-news {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+.img-news { width: 100%; height: 100%; object-fit: cover; }
+
+.body-news {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 350px; 
+}
+
+.titulo-news {
+    font-family: serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    height: 3.9em; 
+    overflow: hidden;
+}
+
+.extracto-news {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.footer-card { margin-top: auto; text-align: right; padding-top: 15px; }
+.flecha-footer { width: 45px; opacity: 0.3; }
+
+/* --- SECCIÓN FINAL: CUADRÍCULA 2x2 --- */
+.seccion-final-mixta { position: relative; width: 100%; }
+.fila-cuadrante { height: 500px; min-height: 500px; }
+
+/* Track específico para el carrusel final */
+#carrusel-final-track { 
+    position: relative; 
+    height: 100%; 
+    display: block !important; 
+}
+
+/* Diapositivas finales */
+.slide-final {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 1;
+}
+
+.slide-final.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-final .col-texto {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: #fff; /* Fondo blanco para simetría */
+}
+
+.slide-final .col-imagen {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .slide-final { flex-direction: column; }
+    .slide-final .col-texto, .slide-final .col-imagen { width: 100%; height: 50%; }
+    .nav-lateral-puntos { right: 20px; gap: 15px; }
+}

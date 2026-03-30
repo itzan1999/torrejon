@@ -1,0 +1,141 @@
+/* Párrafos */
+p {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 16px !important;
+    color: black;
+}
+
+/* Títulos h5 */
+h5 {
+    font-family: "AbrilTitling-Bold" !important;
+    font-size: 20px !important;
+    color: black;
+}
+
+/* Contenedor que limita el ancho para que las tarjetas NO se expandan */
+.news-grid-wrapper {
+    max-width: 750px;
+    margin-left: 0;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* Grid de tarjetas */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Imagen */
+.image-hover {
+    transition:
+        transform 0.3s ease-in-out,
+        filter 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.image-hover:hover {
+    filter: brightness(115%);
+}
+
+/* Tarjeta */
+.card {
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen recortada desde abajo */
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+/* Contenido */
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Línea gris + flecha a la derecha */
+.card-arrow-border {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    padding-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* ===========================
+   MEDIA QUERIES COMPLETAS
+=========================== */
+
+/* 1400px — Pantallas muy grandes */
+@media (max-width: 1400px) {
+    .news-grid-wrapper {
+        max-width: 700px;
+    }
+}
+
+/* 1200px — Desktop grande */
+@media (max-width: 1200px) {
+    .news-grid-wrapper {
+        max-width: 650px;
+    }
+}
+
+/* 992px — Desktop mediano */
+@media (max-width: 992px) {
+    .news-grid-wrapper {
+        max-width: 600px;
+    }
+}
+
+/* 900px — Actual */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    .news-grid-wrapper {
+        max-width: 500px;
+    }
+}
+
+/* 768px — Tablet */
+@media (max-width: 768px) {
+    .news-grid-wrapper {
+        max-width: 450px;
+    }
+    .card-img-top {
+        height: 260px;
+    }
+    h5 {
+        font-size: 18px !important;
+    }
+    p {
+        font-size: 15px !important;
+    }
+}
+
+/* 576px — Móvil grande */
+@media (max-width: 576px) {
+    .news-grid-wrapper {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .card-img-top {
+        height: 240px;
+    }
+}

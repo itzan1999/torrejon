@@ -1,0 +1,14 @@
+.error{
+    color:red;
+    padding-bottom: 5px;
+}
+
+.correcto{
+    color:green;
+}
+
+.resolucion{
+    font-weight: 900;
+    color: rgb(149, 190, 1);
+}
+

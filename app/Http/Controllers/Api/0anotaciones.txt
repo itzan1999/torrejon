@@ -1,0 +1,5 @@
+1. Si se quiere coger un registro buscándolo por la id usa find, si es uno buscado por otro campo where->first, si quieres todos los registros con un campo concreto where->get
+
+
+2. El get es si quieres por ejemplo todas las cuentas que no están activas
+Que sería where(activa, false)->get()
