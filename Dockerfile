@@ -19,4 +19,4 @@ USER nobody
 COPY --chown=nobody:nobody . /var/www/html
 WORKDIR /var/www/html
 
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
