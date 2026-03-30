@@ -27,3 +27,9 @@ COPY --chown=nobody:nobody . /var/www/html
 WORKDIR /var/www/html
 
 RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+
+USER root
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
